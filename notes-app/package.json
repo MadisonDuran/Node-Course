@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/MadisonDuran/Node-Course/issues"
   },
-  "homepage": "https://github.com/MadisonDuran/Node-Course#readme"
+  "homepage": "https://github.com/MadisonDuran/Node-Course#readme",
+  "dependencies": {
+    "chalk": "^5.6.0"
+  }
 }
