@@ -11,8 +11,19 @@ import chalk from 'chalk';
 const msg = getNotes();
 console.log(msg)
 
-const greenMsg = chalk.green.inverse.bold('Success!');
+const greenMsg = chalk.blue.inverse.bold('Success!');
 console.log(greenMsg);
+
+const command = process.argv[2]
+console.log(process.argv)
+
+if (command === 'add') {
+    console.log('Adding note!')
+} else if (command === 'remove') {
+    console.log('Removing note!')
+}
+
+
 
 
 
