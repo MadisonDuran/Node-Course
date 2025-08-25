@@ -5,7 +5,7 @@
 //const validator = require('validator')
 //console.log(validator.isURL(http/mead.io))
 
-const getNotes = require('./notes.js')
+const notes = require('./notes.js')
 import chalk from 'chalk';
 
 const msg = getNotes();
@@ -46,8 +46,7 @@ yargs.command({
       }
     },
     handler: function (argv) {
-        console.log('Title: ' + argv.title)
-        console.log('Body: ' + argv.body)
+        notes.addNote(argv.title, argv.body)
     }
 })
 
