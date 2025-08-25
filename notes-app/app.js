@@ -7,6 +7,12 @@
 
 const notes = require('./notes.js')
 const chalk = require('chalk');
+const greet = require('./module1')
+
+console.log(greet('Chris Brown'));
+
+// create an alias for a function
+serverStatus
 
 const msg = getNotes();
 console.log(msg)
@@ -45,7 +51,7 @@ yargs.command({
         type: 'string'
       }
     },
-    handler: function (argv) {
+    handler(argv) {
         notes.addNote(argv.title, argv.body)
     }
 })
@@ -61,7 +67,7 @@ yargs.command({
             type: 'string'
         }
     },
-    handler: function (argv) {
+    handler(argv) {
         notes.removeNote(argv.title)
     }
 })
@@ -70,7 +76,7 @@ yargs.command({
 yargs.command({
     command: 'list',
     describe: 'List your notes',
-    handler: function () {
+    handler() {
         console.log('listing out all notes')
     }
 })
@@ -80,11 +86,32 @@ yargs.command({
 yargs.command({
     command: 'read',
     describe: 'Read a note',
-    handler: function () {
+    handler() {
         console.log('Reading a note')
     }
 })
 
 yargs.parse()
+
+const express = require('express');
+const app = express();
+
+// creating a route
+app.get('/', (req, res) => {
+    res.send("Hello Express!")
+})
+
+app.get('/weather', (req, res) => {
+    res.send("My new weather page!")
+    // make a call to an API
+    //listen for the response
+    // when data is received serve the page
+})
+
+const PORT = 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server is running at http://localhost:${PORT}`)
+})
 
 
