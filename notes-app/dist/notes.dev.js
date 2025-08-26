@@ -2,6 +2,10 @@
 
 var fs = require('fs');
 
+var chalk = require('chalk');
+
+var notes = require('./notes.js');
+
 var getNotes = function getNotes() {
   return 'Your notes...';
 };
@@ -11,6 +15,9 @@ var addNote = function addNote(title, body) {
   var duplicateNote = notes.find(function (note) {
     return note.title === title;
   });
+  debugger;
+  console.log(duplicateNote);
+  console.log(title);
 
   if (!duplicateNote) {
     notes.push({
